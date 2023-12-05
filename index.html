@@ -4,8 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo_List</title>
+  <!-- 폰트어썸 6.1 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- 리셋 CSS -->
   <link rel="stylesheet" href="./css/reset.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <!-- 기본 JS -->
   <script src="./js/jquery-1.12.4.min.js"></script>
   <script src="./js/jquery-3.3.1.min.js"></script>
@@ -17,7 +20,31 @@
 </head>
 <body>
   <div id="wrap">
-    
+    <div id="content_box">
+      <header>
+        <h1>TO&nbsp;DO&nbsp;LIST</h1>
+      </header>
+      <main>
+        <div class="list_cover">
+          <input type="text" id="list_write" placeholder="메모 적기" autofocus>
+          <button class="list_add"><i class="fa-solid fa-plus"></i></button>
+        </div>
+        <div class="list_view">
+          <ul>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+                숨쉬기쉬기쉬기
+              </label>
+              <button type="button" class="btn-close" aria-label="Close"></button>
+            </div>
+          </ul>
+        </div>
+      </main>
+      <footer>
+        <button type="button" class="btn btn-danger">모두 삭제</button>
+      </footer>
+    </div>
   </div>
 </body>
 </html>
