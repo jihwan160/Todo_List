@@ -1,10 +1,16 @@
 html {
   font-size: 62.5%;
 }
-html #wrap {
+html body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-use-select: none;
+  user-select: none;
+}
+html body #wrap {
   width: 100%;
 }
-html #wrap #content_box {
+html body #wrap #content_box {
   width: 800px;
   background: green;
   position: absolute;
@@ -12,19 +18,23 @@ html #wrap #content_box {
   top: 40%;
   transform: translate(-50%, -50%);
 }
-html #wrap #content_box header h1 {
+html body #wrap #content_box header h1 {
   text-align: center;
   font-size: 4rem;
   font-weight: 700;
   padding-top: 40px;
 }
-html #wrap #content_box main .list_cover {
+html body #wrap #content_box .line_through {
+  color: gray;
+  text-decoration: line-through;
+}
+html body #wrap #content_box main .list_cover {
   padding: 40px;
   position: relative;
   display: flex;
   align-items: center;
 }
-html #wrap #content_box main .list_cover #list_write {
+html body #wrap #content_box main .list_cover #list_write {
   width: 100%;
   height: 40px;
   font-size: 2rem;
@@ -32,39 +42,39 @@ html #wrap #content_box main .list_cover #list_write {
   letter-spacing: -1px;
   padding: 10px;
 }
-html #wrap #content_box main .list_cover .list_add {
+html body #wrap #content_box main .list_cover .list_add {
   width: 50px;
   height: 41px;
   background: blue;
   cursor: pointer;
 }
-html #wrap #content_box main .list_cover .list_add i {
+html body #wrap #content_box main .list_cover .list_add i {
   font-size: 1.8rem;
 }
-html #wrap #content_box main .list_view {
+html body #wrap #content_box main .list_view {
   width: 100%;
   padding: 40px;
   padding-top: 0;
 }
-html #wrap #content_box main .list_view ul {
+html body #wrap #content_box main .list_view ul {
   padding-left: 0;
 }
-html #wrap #content_box main .list_view ul .form-check {
-  background: gray;
+html body #wrap #content_box main .list_view ul .form-check {
+  background: #bebebe;
   padding: 10px 10px 10px 40px;
   font-size: 1.8rem;
   font-weight: 700;
   position: relative;
 }
-html #wrap #content_box main .list_view ul .form-check .btn-close {
+html body #wrap #content_box main .list_view ul .form-check .btn-close {
   position: absolute;
   right: 10px;
 }
-html #wrap #content_box footer {
+html body #wrap #content_box footer {
   padding-bottom: 20px;
   padding-right: 40px;
   text-align: right;
 }
-html #wrap #content_box footer .btn {
+html body #wrap #content_box footer .btn {
   font-size: 2rem;
 }/*# sourceMappingURL=index.css.map */
