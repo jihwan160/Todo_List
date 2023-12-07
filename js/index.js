@@ -16,53 +16,89 @@ let list_write = document.querySelector("#list_write")
 
 list_write.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
-    if (list_write.value === false) {
-      alert("내용입력")
+    if (list_write.value.length === 0) {
+      alert("내용 입력");
     } else {
+      let li = document.createElement("li");
+      let div = document.createElement("div");
+      let input = document.createElement("input");
+      input.type = 'checkbox';
+      let label = document.createElement("label");
+      let del = document.createElement("button")
+      label.innerHTML = list_write.value;
+      list_write.value=''
+      list_cover.appendChild(li);
+      li.appendChild(div);
+      div.appendChild(input)
+      div.appendChild(label)
+      div.appendChild(del)
+      div.classList.add("form-check")
+      input.classList.add("form-check-input")
+      label.classList.add("form-check-label")
+      del.classList.add("btn-close")
+      del.classList.add("one_close")
+
+      // 클릭시 취소선 생기고 글자색 바뀜
+      input.addEventListener("change", (event) => {
+        if (event.currentTarget.checked) {
+          label.classList.add("line_through")
+        } else {
+          label.classList.remove("line_through")
+        }
+      })
+
+      // X버튼 누르면 한개만 삭제
+      del.addEventListener("click", (e) => {
+        if (confirm("삭제하시겠습니까?") == 1) {
+          e.target.parentElement.remove();
+        }
+      })
 
     }
   }
 })
 
 add_btn.addEventListener("click", () => {
-  alert("클릭");
+  if (list_write.value.length === 0) {
+    alert("내용 입력");
+  } else {
+    let li = document.createElement("li");
+      let div = document.createElement("div");
+      let input = document.createElement("input");
+      input.type = 'checkbox';
+      let label = document.createElement("label");
+      let del = document.createElement("button")
+      label.innerHTML = list_write.value;
+      list_write.value=''
+      list_cover.appendChild(li);
+      li.appendChild(div);
+      div.appendChild(input)
+      div.appendChild(label)
+      div.appendChild(del)
+      div.classList.add("form-check")
+      input.classList.add("form-check-input")
+      label.classList.add("form-check-label")
+      del.classList.add("btn-close")
+      del.classList.add("one_close")
+
+      // 클릭시 취소선 생기고 글자색 바뀜
+      input.addEventListener("change", (event) => {
+        if (event.currentTarget.checked) {
+          label.classList.add("line_through")
+        } else {
+          label.classList.remove("line_through")
+        }
+      })
+
+      // X버튼 누르면 한개만 삭제
+      del.addEventListener("click", (e) => {
+        if (confirm("삭제하시겠습니까?") == 1) {
+          e.target.parentElement.remove();
+        }
+      })
+  }
 })
 
-
-
-// 클릭시 취소선 생기고 글자색 바뀜
-// for (var i = 0; i < check_box.length; i++) {
-//   check_box[i].addEventListener("click", (e) => {
-//     if (check_box[i].checked === true) {
-//       list.style.color = "gray";
-//       e.target.nextElementSibling.classList.add("line_through");
-//     } else {
-//       list.style.color = "black";
-//       e.target.nextElementSibling.classList.remove("line_through");
-//     }
-//   })
-// }
-
-// 클릭시 취소선 생기고 글자색 바뀜
-for (var i = 0; i < check_box.length; i++) {
-  check_box[i].addEventListener("click", (e) => {
-    e.target.nextElementSibling.classList.toggle("line_through");
-  })
-}
-  
-
-
-
-
-// X버튼 누르면 한개만 삭제
-for (var i = 0; i < one_close.length; i++) {
-  one_close[i].addEventListener("click",(e)=>{
-    if (confirm("삭제하시겠습니까?") == 1) {
-      let close = e.target.parentElement;
-      close.remove();
-    }
-  })
-}
 
 
 // 모두 삭제
