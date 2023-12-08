@@ -21,30 +21,22 @@ list_write.addEventListener("keypress", (e) => {
     } else {
       let li = document.createElement("li");
       let div = document.createElement("div");
-      let input = document.createElement("input");
-      input.type = 'checkbox';
       let label = document.createElement("label");
       let del = document.createElement("button")
       label.innerHTML = list_write.value;
       list_write.value=''
       list_cover.appendChild(li);
       li.appendChild(div);
-      div.appendChild(input)
       div.appendChild(label)
       div.appendChild(del)
       div.classList.add("form-check")
-      input.classList.add("form-check-input")
       label.classList.add("form-check-label")
       del.classList.add("btn-close")
       del.classList.add("one_close")
 
       // 클릭시 취소선 생기고 글자색 바뀜
-      input.addEventListener("change", (event) => {
-        if (event.currentTarget.checked) {
-          label.classList.add("line_through")
-        } else {
-          label.classList.remove("line_through")
-        }
+      label.addEventListener("click", () => {
+          label.classList.toggle("line_through")
       })
 
       // X버튼 누르면 한개만 삭제
@@ -63,39 +55,31 @@ add_btn.addEventListener("click", () => {
     alert("내용 입력");
   } else {
     let li = document.createElement("li");
-      let div = document.createElement("div");
-      let input = document.createElement("input");
-      input.type = 'checkbox';
-      let label = document.createElement("label");
-      let del = document.createElement("button")
-      label.innerHTML = list_write.value;
-      list_write.value=''
-      list_cover.appendChild(li);
-      li.appendChild(div);
-      div.appendChild(input)
-      div.appendChild(label)
-      div.appendChild(del)
-      div.classList.add("form-check")
-      input.classList.add("form-check-input")
-      label.classList.add("form-check-label")
-      del.classList.add("btn-close")
-      del.classList.add("one_close")
+    let div = document.createElement("div");
+    let label = document.createElement("label");
+    let del = document.createElement("button")
+    label.innerHTML = list_write.value;
+    list_write.value=''
+    list_cover.appendChild(li);
+    li.appendChild(div);
+    div.appendChild(label)
+    div.appendChild(del)
+    div.classList.add("form-check")
+    label.classList.add("form-check-label")
+    del.classList.add("btn-close")
+    del.classList.add("one_close")
+  
+    // 클릭시 취소선 생기고 글자색 바뀜
+    label.addEventListener("click", () => {
+        label.classList.toggle("line_through")
+    })
 
-      // 클릭시 취소선 생기고 글자색 바뀜
-      input.addEventListener("change", (event) => {
-        if (event.currentTarget.checked) {
-          label.classList.add("line_through")
-        } else {
-          label.classList.remove("line_through")
-        }
-      })
-
-      // X버튼 누르면 한개만 삭제
-      del.addEventListener("click", (e) => {
-        if (confirm("삭제하시겠습니까?") == 1) {
-          e.target.parentElement.remove();
-        }
-      })
+    // X버튼 누르면 한개만 삭제
+    del.addEventListener("click", (e) => {
+      if (confirm("삭제하시겠습니까?") == 1) {
+        e.target.parentElement.remove();
+      }
+    })
   }
 })
 
