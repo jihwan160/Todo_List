@@ -58,17 +58,17 @@ html body #wrap #content_box main .list_view {
   padding: 40px;
   padding-top: 0;
 }
-html body #wrap #content_box main .list_view ul {
+html body #wrap #content_box main .list_view .form_check_cover {
   padding-left: 0;
 }
-html body #wrap #content_box main .list_view ul .form-check {
+html body #wrap #content_box main .list_view .form_check_cover .form-check {
   background: #d3d3d3;
   padding: 10px 10px 10px 40px;
   font-size: 1.8rem;
   font-weight: 700;
   position: relative;
 }
-html body #wrap #content_box main .list_view ul .form-check .btn-close {
+html body #wrap #content_box main .list_view .form_check_cover .form-check .btn-close {
   position: absolute;
   right: 10px;
 }
